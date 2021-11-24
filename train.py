@@ -40,4 +40,4 @@ def train(x_train, learning_rate, batch_size, epochs):
 if __name__ == "__main__":
     x_train = load_fsdd(SPECTROGRAMS_PATH)
     vae = train(x_train, LEARNING_RATE, BATCH_SIZE, EPOCHS)
-    vae.save("lux_model")
+    vae.save("model")

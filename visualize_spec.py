@@ -4,8 +4,8 @@ import numpy as np
 import librosa
 import librosa.display
 
-gen_file_path = "/Users/nicks./PycharmProjects/autoencoder/samples/generated/4.wav"
-og_file_path = "/Users/nicks./PycharmProjects/autoencoder/samples/original/4.wav"
+gen_file_path = "/Users/nicks./PycharmProjects/autoencoder/samples/generated/"
+og_file_path = "/Users/nicks./PycharmProjects/autoencoder/samples/original/"
 single_file_path = "/Users/nicks./Desktop/ai_renders/trained_3sec_100epochs_increased_framesize/generated/0.wav"
 spec_comparison_save_path = "/Users/nicks./PycharmProjects/autoencoder/samples/spec_comparison/"
 
@@ -114,8 +114,8 @@ def get_length_of_folder(path):
 def compare_spec_in_folder(length):
 
     for i in range(length-1):
-        gen_path = "/Users/nicks./PycharmProjects/autoencoder/samples/generated/" + str(i) + ".wav"
-        og_path = "/Users/nicks./PycharmProjects/autoencoder/samples/original/" + str(i) + ".wav"
+        gen_path = gen_file_path + str(i) + ".wav"
+        og_path = og_file_path + str(i) + ".wav"
         compare_spec(gen_path,og_path, path_index = i)
         print(f"{i}.wav save completed!")
 

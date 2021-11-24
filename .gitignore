@@ -1,0 +1,5 @@
+venv/
+samples/
+datasets/mel_spectrograms
+datasets/datasets_all
+datasets/min_max_values.pkl
