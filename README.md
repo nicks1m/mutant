@@ -29,7 +29,7 @@ https://drive.google.com/file/d/1nAXnKDASp1wotNj6RQVwHZhmOrIMxdq8/view?usp=shari
 
 ## Pre-processing
 
-Navigate to <project folder>
+Navigate to /project_folder
   1) Create a folder named datasets
   2) Create two more folders inside "datasets":
      "datasets_all" and "mel_spectrograms"
