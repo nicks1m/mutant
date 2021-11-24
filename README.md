@@ -11,11 +11,9 @@ git clone https://github.com/nicks1m/mutant.git
 
 Create a virtual environment and install the requirements:
 ```setup
-cd word2wave
 python3 -m venv /path/to/venv/
-pip install -r requirements.txt
 ```
-
+*Venv should be in project root folder
 *Import all libraries that are in the scripts
 
 For more information on VENV installation
