@@ -255,12 +255,12 @@ class VAE:
         return x
 
 
-if __name__ == "__main__":
-    autoencoder = VAE(
-        input_shape=(28, 28, 1),
-        conv_filters=(32, 64, 64, 64),
-        conv_kernels=(3, 3, 3, 3),
-        conv_strides=(1, 2, 2, 1),
-        latent_space_dim=2
-    )
-    autoencoder.summary()
+# if __name__ == "__main__":
+#     autoencoder = VAE(
+#         input_shape=(28, 28, 1),
+#         conv_filters=(32, 64, 64, 64),
+#         conv_kernels=(3, 3, 3, 3),
+#         conv_strides=(1, 2, 2, 1),
+#         latent_space_dim=2
+#     )
+#     autoencoder.summary()

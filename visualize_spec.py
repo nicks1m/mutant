@@ -4,10 +4,10 @@ import numpy as np
 import librosa
 import librosa.display
 
-gen_file_path = "/Users/nicks./PycharmProjects/autoencoder/samples/generated/"
-og_file_path = "/Users/nicks./PycharmProjects/autoencoder/samples/original/"
-single_file_path = "/Users/nicks./Desktop/ai_renders/trained_3sec_100epochs_increased_framesize/generated/0.wav"
-spec_comparison_save_path = "/Users/nicks./PycharmProjects/autoencoder/samples/spec_comparison/"
+gen_file_path = "./samples/generated/"
+og_file_path = "./samples/original/"
+single_file_path = ""
+spec_comparison_save_path = "./samples/spec_comparison/"
 
 fp = "samples/original/"
 
@@ -125,9 +125,9 @@ def compare_spec_in_folder(length):
 
 
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
     #visualize_single_spec(single_file_path)
-    visualize_single_mel_spec(single_file_path)
+    #visualize_single_mel_spec(single_file_path)
     #compare_spec(gen_file_path, og_file_path)
     #compare_spec_in_folder(get_length_of_folder(fp))
 

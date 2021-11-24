@@ -14,8 +14,8 @@ HOP_LENGTH = 256
 SAVE_DIR_ORIGINAL = "samples/original/"
 SAVE_DIR_GENERATED = "samples/generated/"
 SAVE_DIR_LATENT = "samples/latent/"
-MIN_MAX_VALUES_PATH = "/Users/nicks./Documents/datasets/fsdd/min_max_values.pkl"
-SPECTROGRAMS_PATH = "/Users/nicks./Documents/datasets/fsdd/spec_all"
+MIN_MAX_VALUES_PATH = "./datasets/min_max_values.pkl"
+SPECTROGRAMS_PATH = "./datasets/mel_spectrograms"
 
 
 

@@ -186,7 +186,7 @@ class PreprocessingPipeline:
 if __name__ == "__main__":
     HOP_LENGTH = 256
     FRAME_SIZE = 1024
-    DURATION = 0.74 #3.065  # IN SECONDS #0.74
+    DURATION = 0.74 #3.065 for 3sec duration files, 0.74 for 1sec duration files
     SAMPLE_RATE = 44100 #original 22050
     MONO = True
 

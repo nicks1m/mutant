@@ -9,7 +9,7 @@ from autoencoder import VAE
 LEARNING_RATE = 0.0005
 BATCH_SIZE = 32
 EPOCHS = 100
-SPECTROGRAMS_PATH = "/Users/nicks./Documents/datasets/fsdd/spectrograms_lux"
+SPECTROGRAMS_PATH = "./datasets/mel_spectrograms"
 
 def load_fsdd(spectrogram_path):
     x_train = []
