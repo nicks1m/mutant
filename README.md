@@ -57,15 +57,19 @@ The audio have been pre-processed.
 ## Outputs
 
  in /samples/generated:
+ 
  audio reconstructions of mel-spectrograms that have been predicted by the model.
  
  in /samples/original:
+ 
  audio reconstructions of mel-spectrograms that have been converted from raw audio. These are not fed into the model.
  
  in /samples/latent:
+ 
  audio reconstructions of mel-spectrograms formed from latent vector sampling. (w.i.p)
  
  in /samples/spec_comparison:
+ 
  spectogram side by side comparison between original and generated
  
  
@@ -79,3 +83,7 @@ Due to the small dataset of samples available, I have looked into expanding the 
 ### Mel-Spec Plotter
 
 I added a visualize_spec script that is able to take a single or double audio signal and plot it using librosa.specshow. This plots the two signals above one another, and we are able to look at the mel-scale frequency domain of the respective signals, to get a rough understanding of the signal composition. This is automatically generated everytime we generate a new set of samples from the model.
+
+## Additional Notes
+
+The training of the model was done in Google Colab, utilizing their backend GPU due to insufficient processing power on my laptop. I can provide a link to the Colab notebook if you would like to train your a large dataset and have a go. All that is required is the processed spectrograms from preprocessing.py. The weights and parameters will be saved onto the Colab project folder and it can be downloaded onto the local project folder for generation.
