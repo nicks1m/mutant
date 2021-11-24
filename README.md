@@ -14,6 +14,7 @@ Create a virtual environment and install the requirements:
 python3 -m venv /path/to/venv/
 ```
 *Venv should be in project root folder
+
 *Import all libraries that are in the scripts
 
 For more information on VENV installation
