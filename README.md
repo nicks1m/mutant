@@ -1,9 +1,6 @@
-#VAE Sample Generator
+# VAE Sample Generator
 
-Instructions for operating the model
-
-#--https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/--#
-
+Instructions for operating the model. As of now it is still work-in-progress and it's current feature is to reconstruct .wav files.
 
 ## Setup
 
@@ -23,3 +20,6 @@ For more information on VENV installation
 https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
 
 Download the Dataset
+```download
+https://drive.google.com/file/d/1nAXnKDASp1wotNj6RQVwHZhmOrIMxdq8/view?usp=sharing
+```
