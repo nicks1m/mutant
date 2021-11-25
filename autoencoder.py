@@ -16,8 +16,7 @@ tf.compat.v1.disable_eager_execution()
 
 class VAE:
     """
-    VAE represents a Deep Convolutional variational autoencoder architecture
-    with mirrored encoder and decoder components.
+    VAE is a deep convolutional variational autoencoder, with an encoder and decoder component.
     """
 
     def __init__(self,
@@ -48,6 +47,8 @@ class VAE:
         self.decoder.summary()
         self.model.summary()
 
+    #Note that the metrics work only with tensorflow <= v2.4
+
     def compile(self, learning_rate=0.0001):
         optimizer = Adam(learning_rate=learning_rate)
         self.model.compile(optimizer=optimizer,
@@ -70,24 +71,26 @@ class VAE:
     def load_weights(self, weights_path):
         self.model.load_weights(weights_path)
 
+    #Spectrogram is fed to the encoder, the encoder predicts a latent representation and it is decoded
     def reconstruct(self, images):
         latent_representations = self.encoder.predict(images)
         reconstructed_images = self.decoder.predict(latent_representations)
         return reconstructed_images, latent_representations
 
+    #-----Work In Progress, Sampling from Latent Space-----------#
     def sample_from_latent_space(self, point):
        latent_representation = self.decoder.predict(point)
        #print("The latent: ", latent_representation)
        return latent_representation
 
-    #Generate random vector
+    # Generate random sample point
     def generate_random_point_latent_space(self):
         y = np.random.randint(0, 2 ** 32 - 1)
         np.random.seed(y)
         x = np.random.uniform(-1.0, 1.0, (1,64))
         #print(f"The random point in latent space: {x}")
         return x
-
+    #------------------------------------------------------------#
 
     @classmethod
     def load(cls, save_folder="."):
@@ -106,6 +109,7 @@ class VAE:
                                                          + kl_loss
         return combined_loss
 
+    # Error is calculated via MSE
     def _calculate_reconstruction_loss(self, y_target, y_predicted):
         error = y_target - y_predicted
         reconstruction_loss = K.mean(K.square(error), axis=[1, 2, 3])
@@ -234,7 +238,7 @@ class VAE:
         return x
 
     def _add_bottleneck(self, x):
-        """Flatten data and add bottleneck with Guassian sampling (Dense
+        """Flatten data and add bottleneck with Gaussian sampling (Dense
         layer).
         """
         self._shape_before_bottleneck = K.int_shape(x)[1:]
@@ -255,12 +259,3 @@ class VAE:
         return x
 
 
-# if __name__ == "__main__":
-#     autoencoder = VAE(
-#         input_shape=(28, 28, 1),
-#         conv_filters=(32, 64, 64, 64),
-#         conv_kernels=(3, 3, 3, 3),
-#         conv_strides=(1, 2, 2, 1),
-#         latent_space_dim=2
-#     )
-#     autoencoder.summary()

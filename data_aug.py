@@ -36,7 +36,7 @@ def add_reverb_dataset(data_folder, save_folder):
             #sf.write(save_path, audio_signal[0], sr)
             print("augmentation saved!")
 
-#First Set of Augmentations on Data
+#First Set of Augmentations on Data, pitch shift, harmonic, percussive, time stretching and volume FX applied
 TRANSFORMS = audaugs.Compose([
     audaugs.OneOf([
         audaugs.PitchShift(n_steps=9), audaugs.PitchShift(n_steps=6),
@@ -55,7 +55,7 @@ TRANSFORMS = audaugs.Compose([
     ])
 ])
 
-#Second Set of Augmentations on Data
+#Second Set of Augmentations on Data,  pitch shift, harmonic, percussive, time stretching and volume FX applied
 TRANSFORMS_B = audaugs.Compose([
     audaugs.OneOf([
         audaugs.PitchShift(n_steps=-3), audaugs.PitchShift(n_steps=-6),
